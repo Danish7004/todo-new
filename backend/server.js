@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 //for deploymemnt
-import path from 'path';
+// import path from 'path';
 
 // component import
 import {router} from './routes/userRouter.js';
@@ -34,16 +34,16 @@ const connect = async() => {
 
 
 //deployement config
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static(path.join(__dirname, "./client/build")));
-    app.get(" * ", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "./client/build/index.html"))
-    })
-}else{
-    app.get("/", (req,res)=>{
-    res.json({msg: "hello world"})
-})
-}
+// if(process.env.NODE_ENV === "production"){
+//     app.use(express.static(path.join(__dirname, "./client/build")));
+//     app.get(" * ", (req, res) => {
+//         res.sendFile(path.resolve(__dirname, "./client/build/index.html"))
+//     })
+// }else{
+//     app.get("/", (req,res)=>{
+//     res.json({msg: "hello world"})
+// })
+// }
 
 
 
