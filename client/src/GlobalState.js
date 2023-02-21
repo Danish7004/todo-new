@@ -12,15 +12,18 @@ export const DataProvider = ({children}) =>{
 
     const [token, setToken] = useState(false)
 
-    const refreshToken = async () =>{
-        const res = await axios.get('https://mytodo-mernapp.onrender.com/user/refresh_token')
-        // console.log(res);
-        setToken(res.data.accesstoken)
-    }
+    // const refreshToken = async () =>{
+    //     const res = await axios.get('http://mytodo-mernapp.onrender.com/user/refresh_token')
+    //     // console.log(res);
+    //     setToken(res.data.accesstoken)
+    // }
 
     useEffect(()=>{
         const firstLogin = localStorage.getItem('firstLogin')
-        if(firstLogin) refreshToken()
+        const accesstoken = localStorage.getItem('accesstoken')
+        if(firstLogin){
+            setToken(accesstoken)
+        }
     }, [])
 
     const state = {

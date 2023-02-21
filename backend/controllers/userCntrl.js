@@ -26,6 +26,7 @@ const userCntrl = {
 
             res.cookie('refreshtoken', refreshtoken, {
                 httpOnly:true,
+                secure:true,
                 path: '/user/refresh_token',
                 maxAge: 7*24*60*60*1000
             })
@@ -53,6 +54,7 @@ const userCntrl = {
 
             res.cookie('refreshtoken', refreshtoken, {
                 httpOnly:true,
+                // secure:true,
                 path: '/user/refresh_token',
                 maxAge: 7*24*60*60*1000 //7d
             })

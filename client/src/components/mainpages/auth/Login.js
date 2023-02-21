@@ -17,9 +17,10 @@ function Login(props) {
     const loginSubmit = async(e) =>{
         e.preventDefault()
         try {
-            await axios.post('https://mytodo-mernapp.onrender.com/user/login', {...user})
-
+          const res =  await axios.post('https://mytodo-mernapp.onrender.com/user/login', {...user})
+            console.log(res, "resp")
             localStorage.setItem('firstLogin', true)
+            localStorage.setItem('accesstoken', res.data.accesstoken)
 
             window.location.href = "/";
 

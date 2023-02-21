@@ -58,7 +58,7 @@ function CreateAndUpdateNotes(props) {
                 })
                 setCallback(!callback)
             }else{
-                await axios.post('/api/notes', {...note}, {
+                await axios.post('https://mytodo-mernapp.onrender.com/api/notes', {...note}, {
                     headers: { Authorization: token}
                 })
                 setCallback(!callback)
