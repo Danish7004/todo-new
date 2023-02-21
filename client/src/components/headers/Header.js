@@ -12,7 +12,7 @@ function Header(props) {
         const [isAdmin] = state.userApi.isAdmin
 
     const logoutUser = async() =>{
-        await axios.get('/user/logout')
+        await axios.get('https://mytodo-mernapp.onrender.com/user/logout')
         localStorage.clear()
         // setIsAdmin(false)
         // setIsLogged(false)

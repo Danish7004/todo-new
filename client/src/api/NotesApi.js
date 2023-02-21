@@ -9,7 +9,7 @@ function NotesApi(props) {
     useEffect(()=>{
 
     const getNotes = async() =>{
-        const res = await axios.get('/api/notes')
+        const res = await axios.get('https://mytodo-mernapp.onrender.com/api/notes')
         // console.log(res)
         setNotes(res.data.noteList);
         
